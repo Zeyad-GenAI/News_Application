@@ -1,11 +1,11 @@
 # 📰 NewsCloud - Flutter News Application
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter" />
-  <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white" alt="Dart" />
-  <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android" />
-  <img src="https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white" alt="iOS" />
-</div>
+[![Flutter](https://img.shields.io/badge/Flutter-3.0+-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-3.0+-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
+[![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS-lightgrey?style=for-the-badge)](https://flutter.dev)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+[![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)](https://github.com/Zeyad-GenAI/Furniture_App)
+[![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge)](https://github.com/Zeyad-GenAI/Furniture_App/releases)
 
 <div align="center">
   <h3>🌟 Stay Updated, Stay Informed 🌟</h3>
@@ -24,7 +24,7 @@
 - 🌐 **WebView Integration** - Read full articles within the app
 - ⚡ **Fast Performance** - Optimized scrolling with CustomScrollView and Slivers
 - 🔍 **Search Functionality** - Find specific news articles quickly
-- 📌 **Bottom Navigation** - Easy access to Home, Saved, Explore, and Settings
+- 📌 **Bottom Navigation** - Easy access to Home, Saved, Explore and Settings
 - 🎯 **State Management** - Efficient state handling with StatefulWidget
 
 ---
@@ -35,30 +35,22 @@
   <table>
     <tr>
       <td align="center">
-        <img src="assets/screenshots/splash_screen.png" alt="Splash Screen" width="250"/>
+        <img src="Screen_App/splash_screen.png" alt="Splash Screen" width="250"/>
         <br />
         <sub><b>Splash Screen</b></sub>
       </td>
       <td align="center">
-        <img src="assets/screenshots/home_screen.png" alt="Home Screen" width="250"/>
+        <img src="Screen_App/home_screen.png" alt="Home Screen" width="250"/>
         <br />
         <sub><b>Home Screen</b></sub>
       </td>
       <td align="center">
-        <img src="assets/screenshots/webview_screen.png" alt="Article View" width="250"/>
+        <img src="Screen_App/Screenshot_20250628-150721.png" alt="Article View" width="250"/>
         <br />
         <sub><b>Article WebView</b></sub>
       </td>
     </tr>
   </table>
-</div>
-
-## 🎬 App Demo
-
-<div align="center">
-  <img src="assets/gifs/app_demo.gif" alt="App Demo" width="300"/>
-  <br />
-  <sub><i>Complete app navigation and features demonstration</i></sub>
 </div>
 
 ---
@@ -74,10 +66,14 @@
 dependencies:
   flutter:
     sdk: flutter
-  webview_flutter: ^4.4.2    # WebView integration
-  http: ^1.1.0               # API calls
-  cached_network_image: ^3.3.0  # Image caching
-  pull_to_refresh: ^2.0.0    # Pull-to-refresh functionality
+  webview_flutter: ^4.0.0      # WebView integration
+  http: ^1.1.0                 # API calls
+  cached_network_image: ^3.3.0 # Image caching & optimization
+  pull_to_refresh: ^2.0.0      # Pull-to-refresh functionality
+  flutter_spinkit: ^5.2.0      # Loading animations
+  url_launcher: ^6.1.14        # External URL handling
+  shared_preferences: ^2.2.1   # Local data storage
+  intl: ^0.18.1               # Date formatting & internationalization
 ```
 
 ### **Development Tools**
@@ -100,8 +96,8 @@ dependencies:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/newscloud-flutter.git
-   cd newscloud-flutter
+   git clone https://github.com/Zeyad-GenAI/News_Application.git
+   cd News_Application
    ```
 
 2. **Install dependencies**
@@ -127,30 +123,30 @@ dependencies:
 
 ### 📋 Additional Setup
 
-- **Android**: Ensure minimum SDK version 21 in `android/app/build.gradle`
+- **Android**: Ensure minimum SDK version 23 in `android/app/build.gradle`
 - **iOS**: Set minimum deployment target to iOS 11.0 in `ios/Runner.xcodeproj`
 - **Web**: Enable web support with `flutter config --enable-web`
 
 ---
 
 ## 📁 Project Structure
-
 ```
 lib/
-├── main.dart                 # App entry point
-├── screens/
-│   ├── splash_screen.dart    # Animated splash screen
-│   ├── home_screen.dart      # Main news feed
-│   └── web_view_screen.dart  # Article reader
-├── widgets/
-│   ├── category_list_view.dart
-│   └── news_list_view.dart
-├── models/
-│   └── news_model.dart
+├── Model/
+│   ├── article_model.dart
+│   └── category_model.dart
+├── Screens/
+│   ├── home_screen.dart
+│   ├── splash_screen.dart
+│   └── web_view_screen.dart
 ├── services/
-│   └── news_service.dart
-└── utils/
-    └── constants.dart
+│   └── news_services.dart
+├── Widgets/
+│   ├── category_card.dart
+│   ├── category_list_view.dart
+│   ├── news_card.dart
+│   └── news_list_view.dart
+└── main.dart
 ```
 
 ---
@@ -216,10 +212,9 @@ We welcome contributions! Here's how you can help:
 
 ## 🐛 Issues & Support
 
-- 🔗 **Report Bugs**: [GitHub Issues](https://github.com/yourusername/newscloud-flutter/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/yourusername/newscloud-flutter/discussions)
-- 📧 **Email Support**: support@newscloud.com
-- 📱 **Follow Updates**: [@NewsCloudApp](https://twitter.com/newscloudapp)
+- 🔗 **Report Bugs**: [GitHub Issues](https://github.com/Zeyad-GenAI/News_Application/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/Zeyad-GenAI/News_Application/discussions)
+- 📧 **Email Support**: zeyadelfaramawy@gmail.com
 
 ---
 
@@ -271,13 +266,6 @@ copies or substantial portions of the Software.
 <div align="center">
   <h3>⭐ If you like this project, please give it a star! ⭐</h3>
   <p>Made with ❤️ by the NewsCloud Team</p>
-  
-  <a href="https://github.com/yourusername/newscloud-flutter">
-    <img src="https://img.shields.io/github/stars/yourusername/newscloud-flutter?style=social" alt="GitHub Stars">
-  </a>
-  <a href="https://github.com/yourusername/newscloud-flutter/fork">
-    <img src="https://img.shields.io/github/forks/yourusername/newscloud-flutter?style=social" alt="GitHub Forks">
-  </a>
 </div>
 
 ---
@@ -285,3 +273,7 @@ copies or substantial portions of the Software.
 <div align="center">
   <sub>Built with Flutter 💙 | Powered by News APIs 🌐 | Designed for Everyone 📱</sub>
 </div>
+
+<p align="center">
+  <a href="#top">⬆️ Back to Top</a>
+</p>
